@@ -18,9 +18,17 @@ class MainActivity : AppCompatActivity() {
         //  val rollNumber: TextView = findViewById(R.id.textViewRoll)
 
         rollButton.setOnClickListener {
-            Toast.makeText(this, "Dice Rolled ", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, "Dice Rolled ", Toast.LENGTH_LONG).show()
             rollDice()
+            rollDice1()
         }
+    }
+
+    private fun rollDice1() {
+        val dice1 = Dice(20)
+        val diceRole= dice1.roll()
+        val  rollNumber2: TextView = findViewById(R.id.textView2Roll)
+        rollNumber2.text = diceRole.toString()
     }
 
     private fun rollDice() {
