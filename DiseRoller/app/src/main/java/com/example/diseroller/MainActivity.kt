@@ -8,19 +8,18 @@ import android.widget.TextView
 import android.widget.Toast
 
 
-
 class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val rollButton : Button = findViewById(R.id.buttonRoll)
-     //  val rollNumber: TextView = findViewById(R.id.textViewRoll)
+        val rollButton: Button = findViewById(R.id.buttonRoll)
+        //  val rollNumber: TextView = findViewById(R.id.textViewRoll)
 
         rollButton.setOnClickListener {
-            Toast.makeText(this,"Dice Rolled ",Toast.LENGTH_LONG).show()
-             rollDice()
+            Toast.makeText(this, "Dice Rolled ", Toast.LENGTH_LONG).show()
+            rollDice()
         }
     }
 
@@ -35,9 +34,10 @@ class MainActivity : AppCompatActivity() {
 
 
 }
-class Dice(private val  numSides:Int){
 
-    fun roll():Int{
+class Dice(private val numSides: Int) {
+
+    fun roll(): Int {
         return (1..numSides).random()
     }
 }
