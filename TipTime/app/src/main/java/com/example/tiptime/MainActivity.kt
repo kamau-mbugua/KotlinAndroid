@@ -1,8 +1,8 @@
 package com.example.tiptime
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.tiptime.databinding.ActivityMainBinding
 import java.text.NumberFormat
 import kotlin.math.ceil
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     /*The lateinit keyword is something new.
     It's a promise that your code will initialize the variable before using it.
     If you don't, your app will crash.*/
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,14 +43,21 @@ class MainActivity : AppCompatActivity() {
 
         if ( cost == null ){
             Toast.makeText(this, "Empty Cost of Service", Toast.LENGTH_LONG).show()
+            binding.tipResult.text = ""
             return
         }
 
         //checkedRadioButtonId attribute of the tipOptions RadioGroup,
         //and assign it to a variable called selectedId
-        val selectedId = binding.tipOptions.checkedRadioButtonId
+        /*val selectedId = binding.tipOptions.checkedRadioButtonId
 
         val tipPercentage = when (selectedId) {
+            R.id.option_twenty_percent -> 0.20
+            R.id.option_eighteen_percent -> 0.18
+            else -> 0.15
+        }*/
+
+        val tipPercentage = when (binding.tipOptions.checkedRadioButtonId) {
             R.id.option_twenty_percent -> 0.20
             R.id.option_eighteen_percent -> 0.18
             else -> 0.15
@@ -68,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         //Add an if statement that assigns the
         //ceiling of the tip to the tip variable if roundUp is true.
         if (roundUp){
-            tip = kotlin.math.ceil(tip)
+            tip = ceil(tip)
         }
 
         NumberFormat.getCurrencyInstance()
