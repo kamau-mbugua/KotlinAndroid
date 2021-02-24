@@ -2,6 +2,7 @@ package com.example.tiptime
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.tiptime.databinding.ActivityMainBinding
 import java.text.NumberFormat
 import kotlin.math.ceil
@@ -38,7 +39,12 @@ class MainActivity : AppCompatActivity() {
         //.text == .getText()
         //convert it to a String
         val stringInTextField = binding.etCostService.text.toString()
-        val cost = stringInTextField.toDouble()
+        val cost = stringInTextField.toDoubleOrNull()
+
+        if ( cost == null ){
+            Toast.makeText(this, "Empty Cost of Service", Toast.LENGTH_LONG).show()
+            return
+        }
 
         //checkedRadioButtonId attribute of the tipOptions RadioGroup,
         //and assign it to a variable called selectedId
