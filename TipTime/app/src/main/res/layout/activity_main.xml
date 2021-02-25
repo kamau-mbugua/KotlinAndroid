@@ -17,8 +17,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />-->
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etCostService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cost of Service"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/CostServiceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+   <!-- <EditText
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -30,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/service_question"
@@ -83,7 +102,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tip_options">
 
 
-        <Switch
+        <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/round_up_switch"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -92,6 +111,17 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:text="Round Up Tip?" />
+
+
+      <!--  <Switch
+            android:id="@+id/round_up_switch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="Round Up Tip?" />-->
     </LinearLayout>
 
     <Button
