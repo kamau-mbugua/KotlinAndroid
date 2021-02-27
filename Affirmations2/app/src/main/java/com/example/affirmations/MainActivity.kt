@@ -2,7 +2,10 @@ package com.example.affirmations
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.RecoverySystem
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.affirmations.adapter.ItemAdapter
 import com.example.affirmations.data.Datasource
 
 class MainActivity : AppCompatActivity() {
@@ -10,8 +13,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-     //   val textView: TextView = findViewById(R.id.textView)
+        // Initialize data.
+        val myDataset = Datasource().loadAffirmations()
+        val recyclerView: RecyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        recyclerView.adapter = ItemAdapter(this, myDataset)
 
-        textView.text = Datasource().loadAffirmations().size.toString()
+        // Use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+
+        recyclerView.setHasFixedSize(true)
+
+
     }
 }
