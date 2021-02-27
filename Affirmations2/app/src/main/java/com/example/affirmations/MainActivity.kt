@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val textView: TextView = findViewById(R.id.textView)
+     //   val textView: TextView = findViewById(R.id.textView)
 
         textView.text = Datasource().loadAffirmations().size.toString()
     }
