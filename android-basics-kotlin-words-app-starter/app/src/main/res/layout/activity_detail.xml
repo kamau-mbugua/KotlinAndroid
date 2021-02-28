@@ -12,6 +12,10 @@
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
+
+
+
+      tools:listitem="@layout/word_item_view"
 -->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,6 +30,6 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:padding="16dp"
-        tools:listitem="@layout/word_item_view" />
+        />
 
 </FrameLayout>
