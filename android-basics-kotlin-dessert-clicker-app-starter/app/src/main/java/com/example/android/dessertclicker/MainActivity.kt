@@ -57,6 +57,12 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onDestroy Called")
     }
 
+    override fun onRestart() {
+        super.onRestart()
+
+        Log.d(TAG, "onRestart Called")
+    }
+
     private var revenue = 0
     private var dessertsSold = 0
 
