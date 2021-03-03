@@ -27,6 +27,9 @@ import androidx.databinding.DataBindingUtil
 import com.example.android.dessertclicker.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    override fun onStart() {
+        super.onStart()
+    }
 
     private var revenue = 0
     private var dessertsSold = 0
