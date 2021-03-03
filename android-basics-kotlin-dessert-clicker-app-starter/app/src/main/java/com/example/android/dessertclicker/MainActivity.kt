@@ -39,6 +39,18 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onStart Called")
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        Log.d(TAG, "onResume Called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        Log.d(TAG, "onStop Called")
+    }
+
     private var revenue = 0
     private var dessertsSold = 0
 
