@@ -18,6 +18,7 @@ package com.example.android.dessertclicker
 
 import android.content.ActivityNotFoundException
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -26,9 +27,16 @@ import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import com.example.android.dessertclicker.databinding.ActivityMainBinding
 
+
+const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
+
+
+
     override fun onStart() {
         super.onStart()
+
+        Log.d(TAG, "onStart Called")
     }
 
     private var revenue = 0
