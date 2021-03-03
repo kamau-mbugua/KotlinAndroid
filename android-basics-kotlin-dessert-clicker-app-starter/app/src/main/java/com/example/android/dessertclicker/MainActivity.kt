@@ -51,6 +51,12 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onStop Called")
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+
+        Log.d(TAG, "onDestroy Called")
+    }
+
     private var revenue = 0
     private var dessertsSold = 0
 
